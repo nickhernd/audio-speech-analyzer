@@ -1,0 +1,7 @@
+{
+  "accent_classification": "Other",
+  "confidence_score": 0.6,
+  "english_confidence": 1.0,
+  "transcription": " If you're not British, read these sentences in your best British accent. It's Tuesday, innit? Fancy a cuppa? Blum and X is a hundred quid. The roads are chock-a-block today. I need a bottle of water.",
+  "explanation": "Accent classified as Other with 60.0% confidence. average pitch: 132.1Hz, speech rate: 3.1 events/sec."
+}
