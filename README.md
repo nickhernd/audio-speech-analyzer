@@ -152,3 +152,6 @@ ffmpeg not found: Install ffmpeg system dependency
 Module not found: Run `source venv/bin/activate`  
 Download fails: Check URL accessibility and internet connection  
 Low confidence: Try longer audio samples with clearer speech  
+
+![image](https://github.com/user-attachments/assets/2e7d4cbf-6d80-4dbe-b5c5-aaa0fc532c48)
+
