@@ -1,6 +1,6 @@
 import librosa
 import numpy as np
-import whisper
+from faster_whisper import WhisperModel
 import re
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import StandardScaler
@@ -10,7 +10,7 @@ from config.settings import *
 
 class EnglishAccentClassifier:
     def __init__(self):
-        self.whisper_model = whisper.load_model(WHISPER_MODEL)
+        self.whisper_model = WhisperModel(WHISPER_MODEL)
         self.accent_categories = [
             "American", "British", "Australian", "Canadian", 
             "Irish", "Scottish", "South African", "Indian", "Other"
@@ -63,7 +63,9 @@ class EnglishAccentClassifier:
     
     def _transcribe_with_language_detection(self, audio_path):
         """Transcribes and detects language"""
-        result = self.whisper_model.transcribe(audio_path)
+        segments, info = self.whisper_model.transcribe(audio_path)
+        text = " ".join([segment.text for segment in segments])
+        result = {"text": text, "language": info.language}
         return result
     
     def _detect_english_confidence(self, transcription_result):
