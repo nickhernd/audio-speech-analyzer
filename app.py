@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+import traceback
 
 from src.audio_processor import AudioProcessor
 from src.accent_classifier import EnglishAccentClassifier
@@ -18,6 +19,8 @@ def analyze():
         results = classifier.classify_accent(audio_path)
         return jsonify(results)
     except Exception as e:
+        print("ERROR:", str(e))
+        traceback.print_exc()  # Esto imprime el error completo en los logs
         return jsonify({'error': str(e)}), 500
 
 @app.route('/')

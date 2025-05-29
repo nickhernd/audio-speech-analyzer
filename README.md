@@ -15,7 +15,7 @@ bash scripts/install.sh
 source venv/bin/activate
 
 # 3. Classify an accent
-python src/main.py --url "YOUR_VIDEO_URL" --verbose
+python3 app.py
 ```
 
 ## What It Does
