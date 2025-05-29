@@ -4,8 +4,6 @@ import traceback
 from src.audio_processor import AudioProcessor
 from src.accent_classifier import EnglishAccentClassifier
 
-app = Flask(__name__)
-
 @app.route('/analyze', methods=['POST'])
 def analyze():
     url = request.json.get('url')
